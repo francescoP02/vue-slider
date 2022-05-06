@@ -55,6 +55,14 @@ const app = new Vue(
             clickedThumb: function(index) {
                 this.currentSlide = index;
             },
+
+        },
+
+        created() {        
+            setInterval( () => {
+                this.goForward();
+            }, 3000)
         }
+
     }
 )
