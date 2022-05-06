@@ -36,7 +36,7 @@
             <div class="thumbs">
                 <div @click="goBack" class="prev"></div>
 
-                <div v-for="(item, index) in slides" class="thumb" :class="{active : index === currentSlide}" @click="clickedThumb(index), {active : index = currentSlide}">
+                <div v-for="(item, index) in slides" class="thumb" :class="{active : index === currentSlide}" @click="clickedThumb(index)">
                     <img :src="item.image" alt="">
                 </div>
 

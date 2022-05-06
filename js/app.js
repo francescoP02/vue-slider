@@ -54,7 +54,6 @@ const app = new Vue(
 
             clickedThumb: function(index) {
                 this.currentSlide = index;
-                console.log(currentSlide);
             },
         }
     }
