@@ -1,3 +1,10 @@
+// Descrizione:
+// Partendo dal markup della versione svolta in js plain, rifare lo slider ma questa volta usando Vue.
+// Bonus:
+// 1- al click su una thumb, visualizzare in grande l'immagine corrispondente
+// 2- applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+// 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
+
 Vue.config.devtools = true;
 
 const app = new Vue(
@@ -33,14 +40,21 @@ const app = new Vue(
                 }
             ],
         },
+
         methods: {
             goForward: function() {
                 this.currentSlide >= this.slides.length - 1 ? this.currentSlide = 0 : this.currentSlide++;
                 console.log(this.currentSlide);
             },
+
             goBack: function() {
                 this.currentSlide <= 0 ? this.currentSlide = this.slides.length - 1 : this.currentSlide--;
                 console.log(this.currentSlide);
+            },
+
+            clickedThumb: function(index) {
+                this.currentSlide = index;
+                console.log(currentSlide);
             },
         }
     }
