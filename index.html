@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider JS</title>
+    <!-- STYLE -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- VUE JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <!-- Inizio Vue.js -->
+    <div id="root">
+
+        <div class="container">
+
+            <div class="items">
+
+                <div v-for="(item, index) in slides" class="item" :class="{active : index === currentSlide}">
+                    <img :src="item.image" alt="">
+                    <div class="text">
+                        <h3>{{item.title}}</h3>
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="thumbs">
+                <div @click="goBack" class="prev"></div>
+
+                <div v-for="(item, index) in slides" class="thumb" :class="{active : index === currentSlide}">
+                    <img :src="item.image" alt="">
+                </div>
+
+                <div @click="goForward" class="next"></div>
+            </div>
+
+       </div>
+
+    </div>
+    <!-- Fine Vue.js -->
+
+    <!-- SCRIPT -->
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
