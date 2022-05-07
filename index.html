@@ -23,7 +23,8 @@
 
             <div class="items">
 
-                <div v-for="(item, index) in slides" class="item" :class="{active : index === currentSlide}">
+                <div v-for="(item, index) in slides" class="item" :class="{active : index === currentSlide}"  @mouseover="stopAuto()" @mouseleave="restartAuto()">
+    
                     <img :src="item.image" alt="">
                     <div class="text">
                         <h3>{{item.title}}</h3>

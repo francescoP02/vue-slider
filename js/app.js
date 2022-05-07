@@ -56,10 +56,22 @@ const app = new Vue(
                 this.currentSlide = index;
             },
 
+            // Andando sopra con il mouse all'immagine principare, blocca il timer di 3 secondi
+            stopAuto() {
+                clearInterval(this.playAuto);
+            },
+    
+            // Togliendo il mouse da sopra l'immagine attiva, riparte il timer di 3 secondi
+            restartAuto(){
+                setInterval( this.playAuto = setInterval(() =>{
+                    this.goForward();
+                }, 3000))
+            },
+
         },
 
         created() {        
-            setInterval( () => {
+            this.playAuto = setInterval( () => {
                 this.goForward();
             }, 3000)
         }
